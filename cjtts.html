@@ -42,7 +42,7 @@ function newWord(){
 	$("input").val("");
 	newText = words[Math.floor(Math.random()*words.length)];
 	$("#textToSpeak").text(newText);
-	//$("#textToSpeak").jtts();
+	$("#textToSpeak").jtts();
 	$("input").focus();
 
 	hint = "";
@@ -60,11 +60,18 @@ function newWord(){
 function procKey(event){
 	key = event.which
 	k = String.fromCharCode(key);
+	k = k.toLowerCase();
 	event.preventDefault();
 	if(k in cjkey){
 		enter += k;
 	}
 	else if(key == 32){
+		text = $("#textToSpeak").text();
+		input = $("input").val();
+		c = text[input.length];
+		if(enter in cjdict[c])
+			$("input").val(input+c)
+		enter = "";
 	}
 	else if(key == 8){
 		enter = enter.slice(0, enter.length - 1);
