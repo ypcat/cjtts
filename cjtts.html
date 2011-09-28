@@ -3,7 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>[Your Name] - Interview Test</title>
-
+<style type="text/css">
+body {color: white !important; background-color: black !important;}
+</style>
 </head>
 
 <body>
@@ -69,8 +71,13 @@ function procKey(event){
 		text = $("#textToSpeak").text();
 		input = $("input").val();
 		c = text[input.length];
-		if(enter in cjdict[c])
+		if(enter in cjdict[c]){
 			$("input").val(input+c)
+			new Audio("o.wav").play();
+		}
+		else{
+			new Audio("x.wav").play();
+		}
 		enter = "";
 	}
 	else if(key == 8){
