@@ -59,7 +59,8 @@ $(document).ready(function(){
 				}
 				$(this).data('jtts_text',remainder);
 				$('#jtts_player').jPlayer("setMedia", {
-					mp3: "http://translate.google.com/translate_tts?tl=zh_TW&q="+text
+					//mp3: "http://translate.google.com/translate_tts?tl=zh_TW&q="+text
+					mp3: "http://translate.google.com/translate_tts?ie=UTF-8&total=1&idx=0&textlen=32&client=tw-ob&tl=zh-tw&q=" + text
 				}).jPlayer("play");		
 		}
 		
